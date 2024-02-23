@@ -258,6 +258,18 @@ echo $ROS_PACKAGE_PATH
    add_executable(listener src/listener.cpp)
    target_link_libraries(listener ${catkin_LIBRARIES})
    ```
+  *There maybe some error, you may refer to the following method
+  ![IRlab2_err1](https://github.com/Intelligent-Robot-Course/Intelligent-Robots-Lab/assets/11421441/c732ead8-6714-4431-a326-c4e6ca0794a9)
+  Find the path
+  ```
+  g++ -v -E -x c++ -
+  ```
+  ![IRlab2_err1_path](https://github.com/Intelligent-Robot-Course/Intelligent-Robots-Lab/assets/11421441/1765523b-b7b3-49f5-970e-37b92628c21a)
+  Add these paths to c_cpp_properties.json
+  ![IRlab2_err1_json](https://github.com/Intelligent-Robot-Course/Intelligent-Robots-Lab/assets/11421441/03a29b8f-2b63-4cd8-91ac-aa332c7232d9)
+
+
+
 
 3. 编译package
    
