@@ -28,6 +28,9 @@ $$\begin{aligned}&{\left[\begin{array}{l}
 &\tilde{\boldsymbol{b}}=\boldsymbol{T}_{1} \tilde{\boldsymbol{a}}, \tilde{\boldsymbol{c}}=\boldsymbol{T}_{2} \tilde{\boldsymbol{b}} \quad \Rightarrow \tilde{\boldsymbol{c}}=\boldsymbol{T}_{2} \boldsymbol{T}_{\mathbf{1}} \tilde{\boldsymbol{a}}
 \end{aligned}$$
 
+![image](https://github.com/Intelligent-Robot-Course/Intelligent-Robots-Lab/assets/11421441/9db9849b-8bf2-4188-b7c3-53ed61500194)
+
+
 1. **What is tf?**
 
    tf is a package that lets the user keep track of multiple coordinate frames over time.
