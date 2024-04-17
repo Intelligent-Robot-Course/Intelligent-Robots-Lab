@@ -15,7 +15,14 @@
 
 ### Example 1: detect obstacle
 
+首先克隆仓库至工作目录（以 `~/` 为例）
+
+```
+git clone https://github.com/ZhanyuGuo/smartcar_ws.git
+```
+
 大部分代码不需要更改，因此可先按照原先步骤运行，需要更该部分將用**粗体标注**
+
 step 1:
 
 ```
@@ -338,8 +345,10 @@ $rosrun smartcar_demo maze_explorer.py
 
 Install Opencv
 
+根据安装的 `ROS` 版本选择须安装的包。下文安装命令中的 `<distro>` 处应填入发行版本（noetic/melodic）。可通过指令 `rosversion -d` 查看本机安装的发行版本。
+
 ```
-$sudo apt-get install ros-noetic-vision-opencv libopencv-dev python3-opencv
+$sudo apt-get install ros-<distro>-vision-opencv libopencv-dev python3-opencv
 ```
 
 
@@ -347,7 +356,7 @@ $sudo apt-get install ros-noetic-vision-opencv libopencv-dev python3-opencv
 A simple example
 
 ```
-$sudo apt-get install ros-melodic-usb-cam # 安装摄像头功能包
+$sudo apt-get install ros-<distro>-usb-cam # 安装摄像头功能包
 $roslaunch usb_cam usb_cam-test.launch # 启动功能包
 $rqt_image_view # 可视化工具
 ```
@@ -374,7 +383,7 @@ find_package(catkin REQUIRED COMPONENTS
 find_package(OpenCV REQUIRED)
 ```
 
-step3: Create a node(write a cpp file)
+step3: Create a node(write a cpp file) at `smartcar_ws/src/learning_opencv/src/image_converter.cpp`:
 
 ```c++
 #include <ros/ros.h>
@@ -457,14 +466,16 @@ int main(int argc, char** argv)
 
 step4: Building node
 
-Add two lines to the bottom of the CMakeLists.txt:
+Add two lines to the bottom of the `smartcar_ws/src/learning_opencv/CMakeLists.txt`:
 
 ```
 add_executable(image_converter src/image_converter.cpp)
 target_link_libraries(image_converter ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 ```
 
-step5: Run to see the results
+Then build with `catkin_make` under `smartcar_ws/`
+
+step5: Run to see the results (run `roslaunch usb_cam usb_cam-test.launch` in a separate terminal before running following commands)
 
 ```
 $source devel/setup.bash
