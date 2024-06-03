@@ -89,6 +89,14 @@ rosrun rviz rviz -d `rospack find turtle_tf`/rviz/turtle_rviz.rviz
 sudo ln -s /usr/bin/python3 /usr/bin/python
 ```
 
+** If there is ERROR "Import Error: No module found yaml" and `pip install` not work, you can try:
+```
+sudo apt install python-yaml # ref:https://answers.ros.org/question/278954/problem-with-yaml/
+```
+And, if you meet "Import Error: no module found rospkg", you can try
+```
+sudo apt install python-is-python3 # ref: https://answers.ros.org/question/39657/importerror-no-module-named-rospkg/
+```
 **view_frames** creates a diagram of the frames being broadcast by tf over ROS.
 
 *(If there are type error, please referance this [link](https://blog.csdn.net/xiaowang_tongxue/article/details/108298544))*
