@@ -348,6 +348,8 @@ For ubuntu 20.04:
 ```
 sudo apt-get install ros-noetic-camera-info-manager ros-noetic-image-view
 cd ~/catkin_ws/src
+
+# 默认的分支是main，适合ubuntu 20.04的分支是develop，执行git clone后需要切换到的develop分支：https://wiki.ros.org/usb_cam
 git clone https://github.com/ros-drivers/usb_cam.git
 cd ..
 catkin_make
