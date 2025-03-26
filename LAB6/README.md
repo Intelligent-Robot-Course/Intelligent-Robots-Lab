@@ -10,6 +10,11 @@
 4. 实现limo小车的gmapping建图
 5. 在rviz中显示摄像头，雷达，深度相机数据
 
+## 导航避障碍算法推荐
+1. 我们团队开发并开源了基于优化的轨迹规划框架RDA Planner（RAL 2023）和结合了优化和深度学习的端到端轨迹规划框架NeuPAN（TRO 2025），并且易于LIMO上测试，欢迎大家使用（如果有star一下就更好啦）。欢迎大家提issue！
+   1. [RDA Planner](https://github.com/hanruihua/RDA-planner), [RDA ros](https://github.com/hanruihua/rda_ros)
+   2. [NeuPAN](https://github.com/hanruihua/NeuPAN), [NeuPAN ros](https://github.com/hanruihua/neupan_ros)
+
 
 
 ## 一、LIMO产品简介
