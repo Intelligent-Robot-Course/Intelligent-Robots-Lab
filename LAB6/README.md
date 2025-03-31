@@ -390,7 +390,7 @@ cd agilex_ws/src/limo_ros/limo_base/script
 运行脚本，打开终端，在终端中输入命令：
 
 ```
-python3 limomove.py
+python3 limomove.py  # 如果发现代码有报错，把setmotioncommand中的；linear_x等参数名去掉，只保留参数值
 ```
 
 在终端输入命令之后，limo会先前行走一段距离，然后停下。
