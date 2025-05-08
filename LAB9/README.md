@@ -178,12 +178,12 @@ wstool update -t src
 
 sudo rosdep init   #如果执⾏报错，可以直接忽略
 rosdep update
-rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y
+rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y --skip-keys=libabsl-dev
 
 ./src/cartographer/scripts/install_debs_cmake.sh  #req libs
 ./src/cartographer/scripts/install_abseil.sh    #abseil
 ./src/cartographer/scripts/install_proto3.sh    #proto3 # 注意proto3如果通过apt下过的可以不用在下（protoc --version）
-./src/cartographer/scripts/install_ceres.sh     #ceres-solver 如果代码下不下来，修改.sh里git clone https://github.com/ceres-solver/ceres-solver.git
+# ./src/cartographer/scripts/install_ceres.sh     #ceres-solver 如果代码下不下来，修改.sh里git clone https://github.com/ceres-solver/ceres-solver.git
 
 cd ~/catkin_ws_carto/src/cartographer_ros/cartographer_ros/configuration_files
 cp revo_lds.lua rplidar.lua
@@ -192,8 +192,8 @@ gedit rplidar.lua
 ```
 修改字段如下：
 ```txt
-tracking_frame = “laser_link”,
-published_frame = “laser_link”
+tracking_frame = "laser_link",
+published_frame = "laser_link",
 ```
 
 然后编译安装
@@ -236,6 +236,7 @@ gedit cartographer_demo_rplidar.launch
         args="-d $(find cartographer_ros)/configuration_files/demo_2d.rviz" />  
 </launch>
 ```
+并且从 cartographer的configuration_files中复制 map_builder.lua 和 trajectory_bulider.lua 到 cartographer_ros 的configuration_files
 
 
 ##### 2) Running Cartographer in Simulation
