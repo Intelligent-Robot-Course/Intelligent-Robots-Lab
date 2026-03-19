@@ -250,7 +250,7 @@ rostopic list
 rqt_image_view
 ```
 
-For ubuntu 20.04:
+For ubuntu 20.04: (You need to check out a different branch depending on the ROS version you installed.)
 ```
 sudo apt-get install ros-noetic-camera-info-manager ros-noetic-image-view
 cd ~/catkin_ws/src
