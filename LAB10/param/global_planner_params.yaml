@@ -1,7 +1,7 @@
 GlobalPlanner:
     old_navfn_behavior: false
     use_quadratic: true
-    use_dijkstra: flase
+    use_dijkstra: false
     use_grid_path: false
     allow_unknown: true
     planner_window_x: 0
